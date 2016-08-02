@@ -65,7 +65,7 @@ public class Apple implements Peelable {
 
 		if ((this.state != State.UNPEELED) || hasWorm || (this.taste < 4)) {
 			return new PeelableResponse(PeelableResponse.MessageCode.FAILURE,
-					"The apple must be unpeeled and tasty before it can be peeled");
+					"The apple must be unpeeled and tasty and worm-free before it can be peeled");
 		}
 
 		this.peeler.peel();
