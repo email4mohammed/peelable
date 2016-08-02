@@ -73,6 +73,17 @@ public class TestApple {
 		Assert.assertEquals(apple.getState(), State.EATEN);
 		
 	}	
+	
+	@Test
+	public void testEatUnPeeledApple() {
+		
+		Peelable apple = new Apple(Colour.GREEN, (short)50, (byte)4, false);
+	
+		PeelableResponse response = apple.eat();
+		Assert.assertEquals(response.getMessageCode(), MessageCode.FAILURE);
+		Assert.assertEquals(apple.getState(), State.UNPEELED);
+		
+	}	
 
 	
 	@Test
